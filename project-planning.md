@@ -5,15 +5,16 @@
 - Users can play blackjack as a guest.
 - Users can create an account to track their stats (e.g., win/loss ratio).
 - Users can log in and view their game history.
+- Users can choose a starting amount to play with.
 ### Non-functional Requirements: 
 - Performance, security, user-friendly interface, scalability, etc.
 
 ## Design Application Flow and Features 
 
 - User Flow (Miro/Lucidchart): 
-  - Sketch out how a user moves through the application—registration, logging in, playing as a guest, viewing stats, etc.
-- Game Mechanics (Markdown): 
-  - Define how the blackjack game functions—rules, dealing cards, handling user input, and calculating results.
+  - Plays as Guest: https://lucid.app/lucidchart/c41af8ca-ac69-4bb3-b1b6-de969f02cc5e/edit?viewport_loc=-2874%2C-890%2C4145%2C2053%2C0_0&invitationId=inv_6ab7069a-0a58-49e9-8864-3285342a2228
+  - Plays Logged In: https://lucid.app/lucidchart/d9912c22-b510-4aa0-9aa4-ec00f572aee5/edit?viewport_loc=-2227%2C92%2C3072%2C1521%2C0_0&invitationId=inv_8da06c5a-e856-4782-b508-e53a9157dc47
+- Game Mechanics (Markdown): [Documentation](./game-mechanics.md)
 
 
 ## System Architecture
@@ -58,7 +59,7 @@
 - Express.js, Node.js.
 
 **Database**: 
-- MySQL.
+- MariaDB.
 
 **Other Tools**: 
 - Docker (for containerization), Postman (for API testing), GitHub (for version control).
