@@ -18,10 +18,8 @@
 
 
 ## System Architecture
-### Front-End Components (Figma)
-- **Login/Register Form**: To manage user accounts.
-- **Game Board**: Where the blackjack game takes place.
-- **User Dashboard**: To display stats.
+### Front-End Components (Figma): 
+- [Mockup Designs](https://www.figma.com/design/pPVVgK9VNgP4EjkGfNQqZG/Blackjack-Project?node-id=0-1&node-type=canvas&t=hbNhmgK7fCboWdkF-0)
 
 ### Back-End APIs (Swagger)
 - **User Management**: Register, login, logout.
