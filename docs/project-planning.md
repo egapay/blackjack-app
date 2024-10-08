@@ -13,9 +13,8 @@
 
 - User Flow (Miro/Lucidchart): 
   - Written Flow: [Link](./game-flow.md)
-  - Plays as Guest: [Link](https://app.diagrams.net/#LblackjackGuestFlow.drawio.html#%7B%22pageId%22%3A%22RPy235q5tMtxi7figXNU%22%7D)
-  - ~~Plays Logged In: [Link](https://lucid.app/lucidchart/d9912c22-b510-4aa0-9aa4-ec00f572aee5/edit?viewport_loc=-2227%2C92%2C3072%2C1521%2C0_0&invitationId=inv_8da06c5a-e856-4782-b508-e53a9157dc47)~~
-  - ~~DrawIO: [Link](https://app.diagrams.net/#Lblackjackflow.html#%7B%22pageId%22%3A%22ZznGAL0IxCtw-XnahpMk%22%7D)~~
+  - Plays as Guest: [Link](./blackjackGuestFlow.png)
+  - Plays Logged In: [Link](./blackjackLoggedInFlow.png)
 - Game Mechanics (Markdown): [Documentation](./game-mechanics.md)
 
 
