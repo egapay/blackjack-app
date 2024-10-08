@@ -12,8 +12,10 @@
 ## Design Application Flow and Features 
 
 - User Flow (Miro/Lucidchart): 
-  - Plays as Guest: https://lucid.app/lucidchart/c41af8ca-ac69-4bb3-b1b6-de969f02cc5e/edit?viewport_loc=-2874%2C-890%2C4145%2C2053%2C0_0&invitationId=inv_6ab7069a-0a58-49e9-8864-3285342a2228
-  - Plays Logged In: https://lucid.app/lucidchart/d9912c22-b510-4aa0-9aa4-ec00f572aee5/edit?viewport_loc=-2227%2C92%2C3072%2C1521%2C0_0&invitationId=inv_8da06c5a-e856-4782-b508-e53a9157dc47
+  - Written Flow: [Link](./game-flow.md)
+  - Plays as Guest: [Link](https://app.diagrams.net/#LblackjackGuestFlow.drawio.html#%7B%22pageId%22%3A%22RPy235q5tMtxi7figXNU%22%7D)
+  - ~~Plays Logged In: [Link](https://lucid.app/lucidchart/d9912c22-b510-4aa0-9aa4-ec00f572aee5/edit?viewport_loc=-2227%2C92%2C3072%2C1521%2C0_0&invitationId=inv_8da06c5a-e856-4782-b508-e53a9157dc47)~~
+  - ~~DrawIO: [Link](https://app.diagrams.net/#Lblackjackflow.html#%7B%22pageId%22%3A%22ZznGAL0IxCtw-XnahpMk%22%7D)~~
 - Game Mechanics (Markdown): [Documentation](./game-mechanics.md)
 
 
@@ -21,10 +23,8 @@
 ### Front-End Components (Figma): 
 - [Mockup Designs](https://www.figma.com/design/pPVVgK9VNgP4EjkGfNQqZG/Blackjack-Project?node-id=0-1&node-type=canvas&t=hbNhmgK7fCboWdkF-0)
 
-### Back-End APIs (Swagger)
-- **User Management**: Register, login, logout.
-- **Game Management**: Play a game, record stats, save progress.
-- **Deck of Cards API**: Generate and shuffle cards for gameplay.
+### Back-End APIs (Swagger):
+- [Swagger API](https://app.swaggerhub.com/apis/EthanGapay/blackjackAPI/1.0.0#/)
 
 ### Database Design (Lucidchart)
 - **Users Table**: To store user info (e.g., user_id, username, password_hash).
