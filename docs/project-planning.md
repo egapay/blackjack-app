@@ -11,7 +11,7 @@
 
 ## Design Application Flow and Features 
 
-- User Flow (Miro/Lucidchart): 
+- User Flow (DrawIO): 
   - Written Flow: [Link](./game-flow.md)
   - Plays as Guest: [Link](./blackjackGuestFlow.png)
   - Plays Logged In: [Link](./blackjackLoggedInFlow.png)
@@ -25,10 +25,8 @@
 ### Back-End APIs (Swagger):
 - [Swagger API](https://app.swaggerhub.com/apis/EthanGapay/blackjackAPI/1.0.0#/)
 
-### Database Design (Lucidchart)
-- **Users Table**: To store user info (e.g., user_id, username, password_hash).
-- **Game Stats Table**: To track user stats (e.g., user_id, wins, losses, games_played).
-- **Game History Table**: To store details about each game played (e.g., game_id, user_id, outcome).
+### Database Design (DrawIO):
+- [ER Diagram](./ERDiagram.drawio.png)
 
 ## Data Flow and State Management (Miro/Markdown)
 
