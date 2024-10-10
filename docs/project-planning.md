@@ -1,7 +1,7 @@
 # Planning and Architecture Phase
 ## Define Requirements
 
-### Functional Requirements: (Trello/Google Docs)
+### Functional Requirements:
 - Users can play blackjack as a guest.
 - Users can create an account to track their stats (e.g., win/loss ratio).
 - Users can log in and view their game history.
@@ -11,7 +11,7 @@
 
 ## Design Application Flow and Features 
 
-- User Flow (DrawIO): 
+- User Flow (DrawIO): (Need to update with JWT flow)
   - Written Flow: [Link](./game-flow.md)
   - Plays as Guest: [Link](./blackjackGuestFlow.png)
   - Plays Logged In: [Link](./blackjackLoggedInFlow.png)
@@ -38,12 +38,8 @@
 
 ## Security Considerations 
 
-- Authentication (JWT.io): 
-  - Decide on using JWT (JSON Web Tokens) for user sessions.
-- Password Security (bcrypt): 
-  - Use bcrypt to hash passwords before storing them.
-- Input Validation (Swagger): 
-  - Validate all user inputs both on the client side and server side.
+- Authentication (JWT.io): [Documentation](https://jwt.io/)
+- Password Security (bcrypt): [Documentation](https://www.npmjs.com/package/bcrypt)
 
 ## Tech Stack and Tools (Markdown)
 
@@ -58,19 +54,3 @@
 
 **Other Tools**: 
 - Docker (for containerization), Postman (for API testing), GitHub (for version control).
-
-## Wireframes and UI/UX Design (Figma)
-
-**Wireframes for the core pages**:
-- Landing Page: Show options to log in, register, or play as a guest.
-- Game Page: Layout of the blackjack game.
-- User Dashboard: Display statistics and past game results.
-
-## Set Milestones (Trello or Notion)
-
-- [ ] Create milestones and tasks for each feature. Example milestones:
-- [ ] Set up project structure (front end, back end, database).
-- [ ] Implement user authentication.
-- [ ] Build the blackjack game logic.
-- [ ] Create the deck of cards API.
-- [ ] Connect front end to back end.
