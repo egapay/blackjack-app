@@ -20,12 +20,6 @@ function startGame(reqBody){
         }
     }
 
-    // const gameExists = games.find(g => g.gameId === reqBody["gameId"]);
-    // const playerExists = games.find(p => p.playerId === reqBody["playerId"]);
-
-    // if(playerExists) games.splice()
-
-
     if(!gameExists){
         const playerId = reqBody["playerId"];
         const chipAmount = reqBody["startingChips"];
@@ -63,55 +57,69 @@ function startGame(reqBody){
 function drawCard(gameId, deckId){
     //returns object in games array (BOTH do)
     const gameFound = games.find(g => g.gameId === gameId);
+    const deckFound = games.find(d => d.deckInfo.deckId === deckId);
 
-    const { deckInfo } = gameFound;
-    const { deck } = deckInfo;
-    const { cards } = deck;
+    if(gameFound && deckFound){
+        //destructure objects
+        const { deckInfo } = deckFound;
+        const { deck } = deckInfo;
+        const { cards } = deck;
 
-    // console.log(cards);
-
-    if(gameFound){
-    // if(true){
-        //calculate random values
-        //access the respective array
-        //update array by incrementing value 
-        //store cards in another array
+        //initial searching values
         let randomSuitIndex = 0;
         let randomSuit = "";
         let randomValue = 0;
+        
+        let selectedCardValue = "";
+        let selectedCardPlayed = 0;
+
         try{
             do{
+                //pick random suit from list of suits
                 randomSuitIndex = Math.floor(Math.random() * deck.suits.length);
-                randomSuit = deck.suits[3]; //change back
+                //get name of suit
+                randomSuit = deck.suits[randomSuitIndex]; //change back
+                //get random value from number of objects in suit array
                 randomValue = Math.floor(Math.random() * cards[randomSuit].length);
-                if(cards[randomSuit][randomValue].played > 5){
+
+                selectedCardValue = cards[randomSuit][randomValue].value;
+                selectedCardPlayed = cards[randomSuit][randomValue].played;
+
+                //checks for card played more than 6 times, if true, removes from array
+                if(selectedCardPlayed > 5){
                     cards[randomSuit].splice(randomValue, 1)
                 }
             } while (cards[randomSuit] && cards[randomSuit][randomValue] && 
-                        cards[randomSuit][randomValue].played > 5);
+                        selectedCardPlayed > 5);
         } catch(err){
             console.log(err);
         }
-        
-        
-        // console.log(cards[randomSuit][randomValue].value)
 
         //update played field
         cards[randomSuit] = cards[randomSuit].map(card => {
-            if(card.value === cards[randomSuit][randomValue].value){
-                let playedCounter = cards[randomSuit][randomValue].played + 1
-                return { ...card, played: playedCounter};
+            //selects value of card object in suit array
+            if(card.value === selectedCardValue){
+                //increments played by one, and inserts it back into the array
+                selectedCardPlayed = cards[randomSuit][randomValue].played + 1
+                return { ...card, played: selectedCardPlayed};
             }
             return card;
         })
-        console.log("\n -------------------------- Deck -------------------------- ")
-        console.log(cards)
-        console.log("\n -------------------------- End of Deck -------------------------- ")
 
+        //create card object to include suit
+        let drawnCard = {
+            suit: randomSuit,
+            value: selectedCardValue,
+            played: selectedCardPlayed
+        }
 
-        return { status: 200, message: "Success!" }
+        // console.log("\n -------------------------- Deck -------------------------- ")
+        // console.log(cards)
+        // console.log("\n -------------------------- End of Deck -------------------------- ")
+
+        return { status: 200, data: drawnCard };
     } else {
-        return { status: 400, message: "Invalid Request" }
+        return { status: 400, data: "Deck/Game not found!" }
     }
 }    
 
@@ -140,7 +148,7 @@ app.post('/:gameId/:deckId/draw', (req, res) => {
     const gameId = req.params.gameId;
     const deckId = req.params.deckId;
     const drawnCard = drawCard(gameId, deckId);
-    res.status(drawnCard.status).send(drawnCard.message);
+    res.status(drawnCard.status).send(drawnCard.data)
 })
 
 app.listen(PORT, (error) => {
@@ -148,18 +156,3 @@ app.listen(PORT, (error) => {
         console.log("Server running on port: " + PORT)
     } else { console.log("Server cannot start on port: " + PORT, error)}
 });
-
-
-// app.get('/', (req, res) => {
-//     res.send("Success!");
-// })
-
-// app.get('/test', (req, res) => {
-//     res.status(200);
-//     res.send("test Success!");
-// })
-
-// app.get('/htmlTest', (req, res) => {
-//     res.set('Content-Type', 'text/html');
-//     res.status(200).send("<h1>HTML Test Success!</h1>")
-// })
