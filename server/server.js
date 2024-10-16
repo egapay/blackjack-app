@@ -77,14 +77,22 @@ function drawCard(gameId, deckId){
         //update array by incrementing value 
         //store cards in another array
         let randomSuitIndex = 0;
-        let randomSuit = "clubs";
+        let randomSuit = "";
         let randomValue = 0;
-
-        do{
-            // randomSuitIndex = Math.floor(Math.random() * deck.suits.length);
-            // randomSuit = deck.suits[randomSuitIndex];
-            // randomValue = Math.floor(Math.random() * cards[randomSuit].length);
-        } while (cards[randomSuit][randomValue].played > 5);
+        try{
+            do{
+                randomSuitIndex = Math.floor(Math.random() * deck.suits.length);
+                randomSuit = deck.suits[3]; //change back
+                randomValue = Math.floor(Math.random() * cards[randomSuit].length);
+                if(cards[randomSuit][randomValue].played > 5){
+                    cards[randomSuit].splice(randomValue, 1)
+                }
+            } while (cards[randomSuit] && cards[randomSuit][randomValue] && 
+                        cards[randomSuit][randomValue].played > 5);
+        } catch(err){
+            console.log(err);
+        }
+        
         
         // console.log(cards[randomSuit][randomValue].value)
 
